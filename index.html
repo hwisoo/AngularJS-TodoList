@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular TODO list</title>
+    <link href='//fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css" />   
+</head>
+<body ng-app="Todo"> 
+    <div class="page-container" ng-controller="TodoCtrl">
+        <h2>Todo List - Today's date is  <span id="date"></span></h2>
+            <ul class="todo-list" ng-repeat="todo in todos track by $index">
+                <li>
+                    <span>{{ todo }}</span>
+                    <button class="bt bt-achieve" ng-click="done(todo)">Done</button>
+                </li>
+            </ul>
+    
+
+    <ul class="add-todo">
+        <li>
+            <input type="text" class="txt" placeholder="New Todo" ng-model="newTodo" ng-keyup="add($event)" />
+        </li>
+    </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="script.js"></script>   
+</body>
+</html>
